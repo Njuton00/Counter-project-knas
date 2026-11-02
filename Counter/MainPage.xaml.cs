@@ -38,6 +38,12 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (ColorPicker.SelectedItem == null)
+        {
+            DisplayAlert("Error", "Select a color.", "OK");
+            return;
+        }
+
         string colorName = ColorPicker.SelectedItem.ToString();
 
         CounterItem newCounter = new CounterItem(name, initialValue, initialValue, colorName);
